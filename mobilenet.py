@@ -31,7 +31,7 @@ class MobileNetV2(nn.Module):
         # Initialize conv and batchnorm layers
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
-                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu6')
+                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='leaky_relu')
             elif isinstance(m, nn.Conv2d):
                 nn.init.normal_(m.weight)
                 nn.init.constant_(m.bias, 0)
