@@ -6,7 +6,8 @@ class MobileNetV2(nn.Module):
     def __init__(self, t, p, output_channels=1000, alpha=1, rho=1):
         super(MobileNetV2, self).__init__()
 
-        self.channels = [32, 16, 24, 32, 64, 96, 160, 320] * alpha
+        self.rho, self.alpha = rho, alpha
+        self.channels = [32, 16, 24, 32, 64, 96, 160, 320] * self.alpha
 
         self.initial_conv = nn.Conv2d(3, self.channels[0], kernel_size=3, stride=2, padding=1)
         self.initial_bn = nn.BatchNorm2d(32)
