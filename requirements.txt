@@ -1,0 +1,8 @@
+torch==1.0.1
+torchvision
+Pillow
+tqdm
+numpy
+pandas
+matplotlib
+seaborn
