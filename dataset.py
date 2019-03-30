@@ -6,7 +6,6 @@ import shutil
 from tqdm import tqdm
 import numpy as np
 from glob import glob
-import sys
 
 from torchvision import transforms
 from PIL import Image
